@@ -10,7 +10,7 @@ import {
 import { Document } from 'mongoose';
 
 @Schema({ timestamps: true })
-export class User extends Document {
+export class User {
   @IsString()
   @IsNotEmpty({ message: 'Name should not be empty' })
   @MinLength(2, { message: 'Name should be at least 2 characters long' })
@@ -39,4 +39,5 @@ export class User extends Document {
   password: string;
 }
 
+export type UserDocument = User & Document;
 export const UserSchema = SchemaFactory.createForClass(User);
