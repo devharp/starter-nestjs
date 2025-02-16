@@ -396,3 +396,7 @@ Temporary Items
 # Local
 .env
 dist
+
+# Environments
+.env.production
+.env.development
