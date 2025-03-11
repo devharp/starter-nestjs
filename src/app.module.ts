@@ -5,6 +5,8 @@ import { RegistrationModule } from './modules/registration/registration.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { EEnvironments } from './enums/environments.enum';
+import { AuthModule } from './shared/auth/auth.module';
+import { LoginModule } from './modules/login/login.module';
 
 @Module({
   imports: [
@@ -18,6 +20,8 @@ import { EEnvironments } from './enums/environments.enum';
         ? process.env.REMOTE_DB_URI
         : process.env.LOCAL_DB_URI,
     ),
+    AuthModule,
+    LoginModule,
   ],
   controllers: [AppController],
   providers: [AppService],
