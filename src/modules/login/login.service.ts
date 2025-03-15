@@ -6,7 +6,7 @@ import { AuthService } from 'src/shared/auth/auth.service';
 export class LoginService {
   constructor(private authService: AuthService) {}
 
-  @TryCatch('Failed to save user')
+  @TryCatch('Failed to login')
   public async login({
     username,
     password: sub,
